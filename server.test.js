@@ -5,13 +5,13 @@ const request = supertest(app);
 it("Call the /github endpoint", async () => {
   const res = await request.get("/github");
   expect(res.status).toBe(200);
-  expect(res.text).toBe("Hello, github indonesia this is a test!");
+  expect(res.text).toBe("Hello, github indonesia this is a test ci cd!");
 });
 
 it("Call the /youtube endpoint", async () => {
   const res = await request.get("/youtube");
   expect(res.status).toBe(200);
-  expect(res.text).toBe("Hello, youtube indonesia!");
+  expect(res.text).toBe("Hello, youtube indonesia this is a test ci cd!");
 });
 
 it("Call the / endpoint", async () => {
