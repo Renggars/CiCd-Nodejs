@@ -19,6 +19,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: CD
+        run: echo "Starting CD pipeline..."
        
       - name: Deploy using ssh
         uses: appleboy/ssh-action@v1
