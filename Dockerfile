@@ -1,12 +1,11 @@
-FROM node:alpine
+FROM node:20-alpine
 
-LABEL maintainer="Iqbal Syamil <iqbalsyamilayas@gmail.com>"
+LABEL maintainer="Rengga"
 
-RUN apk update && apk add ca-certificates && update-ca-certificates
+RUN apk add --no-cache ca-certificates
 
-RUN mkdir /app
-ADD . /app
 WORKDIR /app
+COPY . .
 
 RUN npm install
-CMD npm start
+CMD ["npm", "start"]
