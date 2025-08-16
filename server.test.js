@@ -2,6 +2,12 @@ const app = require("./server"); // Link to your server file
 const supertest = require("supertest");
 const request = supertest(app);
 
+it("Call the /github endpoint", async (done) => {
+  const res = await request.get("/github");
+  expect(res.status).toBe(200);
+  expect(res.text).toBe("Hello, github");
+  done();
+});
 it("Call the /youtube endpoint", async (done) => {
   const res = await request.get("/youtube");
   expect(res.status).toBe(200);
